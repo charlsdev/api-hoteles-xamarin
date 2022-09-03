@@ -40,30 +40,30 @@ app.get('/api', async (req, res) => {
 
 app.post('/api', async (req, res) => {
    const {
-      cedula, 
-      nombres_completos, 
-      fecha, 
-      num_personas, 
-      tipo_habitacion, 
-      num_habitacion, 
-      lugar, 
-      precio_dia,
-      dias_estadia
+      Cedula: cedula, 
+      NameCompleto: nameCompleto, 
+      Fecha: fecha, 
+      NumPersonas: numPersonas, 
+      TipoHabitacion: tipoHabitacion, 
+      NumHabitacion: numHabitacion, 
+      Lugar: lugar, 
+      PrecioDia: precioDia,
+      DiasEstadia: diasEstadia
    } = req.body;
    
    const strQuery = 'INSERT INTO hoteles SET ?';
 
    const values = {
       cedula, 
-      nombres_completos, 
+      nameCompleto, 
       fecha, 
-      num_personas, 
-      tipo_habitacion, 
-      num_habitacion, 
+      numPersonas, 
+      tipoHabitacion, 
+      numHabitacion, 
       lugar,
-      precio_dia,
-      dias_estadia, 
-      precio_reserva: precio_dia * dias_estadia
+      precioDia,
+      diasEstadia, 
+      precioReserva: precioDia * diasEstadia
    };
 
    try {
@@ -144,31 +144,31 @@ app.get('/api/:id', async (req, res) => {
 
 app.put('/api', async (req, res) => {
    const {
-      id,
-      cedula, 
-      nombres_completos, 
-      fecha, 
-      num_personas, 
-      tipo_habitacion, 
-      num_habitacion, 
-      lugar,
-      precio_dia,
-      dias_estadia
+      Id: id,
+      Cedula: cedula, 
+      NameCompleto: nameCompleto, 
+      Fecha: fecha, 
+      NumPersonas: numPersonas, 
+      TipoHabitacion: tipoHabitacion, 
+      NumHabitacion: numHabitacion, 
+      Lugar: lugar, 
+      PrecioDia: precioDia,
+      DiasEstadia: diasEstadia
    } = req.body;
 
    const strQuery = 'UPDATE hoteles SET ? WHERE id = ?';
 
    const values = {
       cedula,
-      nombres_completos, 
+      nameCompleto, 
       fecha, 
-      num_personas, 
-      tipo_habitacion, 
-      num_habitacion, 
+      numPersonas, 
+      tipoHabitacion, 
+      numHabitacion, 
       lugar,
-      precio_dia,
-      dias_estadia, 
-      precio_reserva: precio_dia * dias_estadia
+      precioDia,
+      diasEstadia, 
+      precioReserva: precioDia * diasEstadia
    };
 
    try {
