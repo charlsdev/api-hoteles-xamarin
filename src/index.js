@@ -96,7 +96,6 @@ app.delete('/api/:id', async (req, res) => {
 
    try {
       const resp = await client.query(strQuery, id);
-      console.log(resp);
       
       if (resp.affectedRows > 0) {
          res.status(200).json({
